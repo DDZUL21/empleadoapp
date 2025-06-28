@@ -1,2 +1,56 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+// Empleado.java
+
+/**
+ * Clase que representa a un empleado.
+ */
+public class Empleado {
+    // Atributos
+    private String nombre;
+    private int edad;
+    private double salario;
+
+    // Constructor
+    public Empleado(String nombre, int edad, double salario) {
+        this.nombre = nombre;
+        this.edad = edad;
+        this.salario = salario;
+    }
+
+    // Método para mostrar la información del empleado
+    public void mostrarInformacion() {
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Edad: " + edad);
+        System.out.println("Salario: $" + salario);
+    }
+
+    // Método para aumentar el salario en un porcentaje dado
+    public void aumentarSalario(double porcentaje) {
+        salario += salario * (porcentaje / 100);
+        System.out.println("Nuevo salario: $" + salario);
+    }
+}
+// Main.java
+
+/**
+ * Clase principal para probar la clase Empleado.
+ */
+public class Main {
+    public static void main(String[] args) {
+        // Crear objetos de tipo Empleado
+        Empleado emp1 = new Empleado("Ana", 30, 2500.0);
+        Empleado emp2 = new Empleado("Luis", 45, 3200.0);
+
+        // Mostrar información de los empleados
+        System.out.println("Información del Empleado 1:");
+        emp1.mostrarInformacion();
+
+        System.out.println("\nInformación del Empleado 2:");
+        emp2.mostrarInformacion();
+
+        // Aumentar salario del primer empleado
+        System.out.println("\nAumentando salario del Empleado 1 en 10%...");
+        emp1.aumentarSalario(10);
+    }
+}
